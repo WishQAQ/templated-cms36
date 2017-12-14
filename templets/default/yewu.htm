@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link media="screen" type="text/css" href="/skin/css/style.css" rel="stylesheet">
+<script type="text/javascript" src="/skin/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/skin/js/base.js"></script>
+<script type="text/javascript" src="/skin/js/yw.js"></script>
+<script type="text/javascript">
+//导航
+$(document).ready(function(){
+	$("#nav li").hover(function(){
+		$(this).find("ul").slideDown("slow");	
+	},function(){
+		$(this).find("ul").slideUp("fast");	
+	});
+});
+
+</script>
+</head>
+<body>
+<!--Header--> 
+{dede:include filename="head.htm"/} 
+<!--/Header-->
+<div class="allbanner"><img src="/skin/images/banner_2.jpg" width="1920" /></div>
+<div class="absoboxwrap">
+  <div class="ywmnav">
+   {dede:channel  }
+    <dl id="y_ywsmenu" onClick="location.href='[field:typeurl/]';">
+      <dt>0[field:global name=autoindex runphp="yes"]@me=@me+1;[/field:global] </dt>
+      <dd>[field:typename/]</dd>
+    </dl>
+    {/dede:channel}
+    
+     </div>
+  <div class="yw1ct">
+  {dede:field.content/}
+    </div>
+</div>
+<!--Footer-->
+<div class="allclear"></div>
+{dede:include filename="footer.htm"/}
+</body>
+</html>

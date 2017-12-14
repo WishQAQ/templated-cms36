@@ -1,0 +1,31 @@
+<div class="footer">
+  <ul>
+    <li class="foterlogo"><img src="/skin/images/foot_logo.png" width="95" height="25" /></li>
+    <li class="fotercpr">{dede:global.cfg_copy/}<br/>
+      备案号:{dede:global.cfg_beian/} </li>
+    <li class="rf">
+      <div class="footselectnav">
+        <dl class="footselect">
+          <dt>股东单位</dt>
+          <dd>
+            <ul>
+              {dede:arclist typeid='29' limit='0,10'}
+              <li><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+              {/dede:arclist}
+            </ul>
+          </dd>
+        </dl>
+        <dl class="footselect">
+          <dt>成员企业</dt>
+          <dd>
+            <ul>
+              {dede:arclist typeid='30' limit='0,10'}
+              <li><a href="[field:arcurl/]"  target="_blank">[field:title/]</a></li>
+              {/dede:arclist}
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,1 @@
+<li> <span class="newstime">[field:pubdate  function=strftime('%Y-%m-%d',@me)/]</span><a href="[field:arcurl/]" title="[field:title/]" target="_blank">[field:title/]</a> </li>

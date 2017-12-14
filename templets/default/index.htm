@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+                       (0 0)
+   +-------------oOO----(_)----------------+
+   |           Powered By 织梦猫           |
+   |            www.dedemao.com            |
+   |        E-mail:admin@dedemao.com       |
+   +--------------------------oOO----------+
+                      |__|__|
+                       || ||
+                      ooO Ooo
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link media="screen" type="text/css" href="/skin/css/style.css" rel="stylesheet">
+<script type="text/javascript" src="/skin/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.KinSlideshow-1.2.1.min.js"></script>
+<script type="text/javascript" src="/skin/js/base.js"></script>
+<script src="/skin/js/jquery.krakatoa.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#focusNews").KinSlideshow();
+    })
+
+$(document).ready(function(){
+	$("#nav li").hover(function(){
+		$(this).find("ul").slideDown("slow");	
+	},function(){
+		$(this).find("ul").slideUp("fast");	
+	});
+});
+
+$(window).on('load',function(){
+		$('.krakatoa').krakatoa( { width: '370px', height: '230px' });
+	});
+</script>
+</head>
+<body>
+<!--Header--> 
+{dede:include filename="head.htm"/} 
+<!--/Header-->
+<div class="hbanner"><img src="/skin/images/banner_1.jpg" width="1920" height="300" /></div>
+<div class="navby">
+  <div class="navby1258">
+    <div class="navbyline navbylet418">
+      <div class="navtit"></div>
+      <!--滑动开始-->
+      <div class="krakatoa" data-settings="{autoplay : true,loop : true,topbuttons :true}">
+       {dede:channelartlist row=12   typeid='12,13,14,15,16,17'}
+        <ul  class="nestlist">
+          <p>{dede:field name='typename'/}</p>
+          {dede:arclist    limit='0,1'}
+          <li><img src="[field:litpic/]" width="162" height="162"></li>
+          <li>[field:description/]...   
+          {/dede:arclist}
+            <div id="newsbtn"><a href="{dede:field name='typeurl'/}">查看更多&gt;&gt;</a></div>
+          </li>
+        </ul>
+        {/dede:channelartlist}
+         </div>
+      <!--滑动结束--> 
+    </div>
+    <div class="navbylet418">
+      <div class="navtit"></div>
+      <!--滑动开始-->
+      <div class="krakatoa" >
+        <ul  class="nestlist">
+          <p>情侣路基金</p>
+          <li>
+            <h3>珠海金控积极发挥地方金融平台优势与职责，向市政府报送了《关于引入民间资本组建投资基金建设情侣路南段辅线及配套公园工程相关事项的请示》，并获得市政府领导批复同意试行。</h3>
+            <div id="newsbtn"><a href="#">查看更多&gt;&gt;</a></div>
+          </li>
+          <li><img src="/skin/images/item_r1_c1.png" width="189" height="128" /></li>
+        </ul>
+        <ul  class="nestlist">
+          <p>天基新材料</p>
+          <li>
+            <h3>在完成对天基新材的投资后，项目投后管理团队一方面紧密跟踪企业的生产经营情况，同时也努力帮助天基新材拓展新的业务领域，积极为企业进入资本市场提供帮助。</h3>
+            <div id="newsbtn"><a href="#">查看更多&gt;&gt;</a></div>
+          </li>
+          <li><img src="/skin/images/item_r1_c2.png" width="189" height="128" /></li>
+        </ul>
+      </div>
+      <!--滑动结束--> 
+    </div>
+    <div class="navbylet418">
+      <div class="navtit"></div>
+      <div class="krakatoa" data-settings="{ items : 1, autoplay : true, loop : true,arrows : true ,buttons:false, width:367px,height:158px }">      {dede:arclist typeid='7' limit='0,5' flag='f'}
+       <a title="[field:title/]" target="_blank" href="[field:arcurl/]"><img src="[field:litpic/]" alt="[field:title/]" /></a> 
+       {/dede:arclist}
+        </div>
+      <ul id="news5">
+        {dede:arclist typeid='7' limit='0,5'}
+        <li> <span class="newstime">[field:pubdate  function=strftime('%Y-%m-%d',@me)/]</span><a href="[field:arcurl/]" title="[field:title/]" target="_blank">[field:title/]</a> </li>
+        {/dede:arclist}
+      </ul>
+    </div>
+  </div>
+</div>
+<!--Footer-->
+<div class="allclear"></div>
+{dede:include filename="footer.htm"/} 
+<!--/Footer-->
+</body>
+</html>

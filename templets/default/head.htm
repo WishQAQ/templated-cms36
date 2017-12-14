@@ -1,0 +1,22 @@
+<div class="headr">
+  <ul id="nav">
+    <li class="menu_out">
+      <div class="menu_inner">
+        <div class="hlogo"> <img src="/skin/images/logo.png" width="146" height="39" /> </div>
+        <div class="hcity"> <img src="/skin/images/city.png" width="196" height="13" /> </div>
+      </div>
+    </li>
+    <li class="mainlevel"> <a href="/"><span id="cnf">首页</span><br />
+      <span id="enf">HOME</span> </a> </li>
+    {dede:channelartlist row='20' typeid='1,7,11,18,23,28' }
+    <li class="mainlevel"> <a href="{dede:field name='typeurl'/}"><span id="cnf">{dede:field name='typename'/}</span><br/>
+      <span id=enf>{dede:global name=itemindex runphp='yes'}if(@me==1){@me='ABOUT'; }if(@me==2){@me='DYNAMIC'; } if(@me==3){@me='INDUSTRY'; }if(@me==4){@me='HENGQIN'; } if(@me==5){@me='HR'; }if(@me==6){@me='CONTACT US'; }{/dede:global}</span> </a>
+      <ul>
+        {dede:channel type='son' noself='yes' }
+        <li><a href="[field:typelink/]">[field:typename/]</a></li>
+        {/dede:channel}
+      </ul>
+    </li>
+    {/dede:channelartlist}
+  </ul>
+</div>

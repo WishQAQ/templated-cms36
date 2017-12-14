@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="/skin/css/pagination.css" />
+<link media="screen" type="text/css" href="/skin/css/style.css" rel="stylesheet">
+<script type="text/javascript" src="/skin/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/skin/js/base.js"></script>
+<script type="text/javascript">
+
+//导航
+$(document).ready(function(){
+	$("#nav li").hover(function(){
+		$(this).find("ul").slideDown("slow");	
+	},function(){
+		$(this).find("ul").slideUp("fast");	
+	});
+});
+
+</script>
+</head>
+<body>
+{dede:include filename="head.htm"/} 
+<!--/Header-->
+<div class="allbanner"><img src="/skin/images/banner_news.jpg" width="1920" /></div>
+<div class="absoboxwrap">
+  <div id="lmenu">
+    <div class="navtoptit">公司借助参股控股银行等专业金融机构，致力于打造国内一流、国际领先的综合金融服务平台，助理珠海金控在多个金融领域实现跨越式发展。</div>
+    <!--子导航-->
+    <div  class="navlmenu">
+      <ul class="navmlist">
+        {dede:channel  }
+        <li onClick="location.href='[field:typeurl/]';">
+          <div class="navmborder"></div>
+          <div id="navmtext">
+            <h2> <a title="[field:typename/]" href="[field:typeurl/]">[field:typename/]</a></h2>
+          </div>
+        </li>
+        {/dede:channel}
+      </ul>
+    </div>
+    <!--子导航--> 
+  </div>
+  <div id="rctera">
+    <div class="titrctera">{dede:field.typename/}</div>
+    <div class="bodyrctera"> 
+      <!--取得一个分页DataTable--> 
+      {dede:list pagesize='10'}
+      <ul class="newsrctera">
+        <li class="ddlt80"><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
+        <li class="ddlt20"> [field:pubdate  function=strftime('%Y-%m-%d',@me)/]</li>
+      </ul>
+      {/dede:list}
+      <div class="line20 allclear"></div>
+      <div class="flickr">
+        <style type="text/css">
+.dede_pages{}.dede_pages ul{ float:left; padding:12px 0px 12px 16px;}.dede_pages ul li{ float:left; font-family:Tahoma; line-height:17px; margin-right:6px; border:1px solid #E9E9E9;list-style-type:none; }.dede_pages ul li a{ float:left; padding:2px 4px 2px; color:#555; display:block; ;list-style-type:none; }.dede_pages ul li a:hover{ color:#690; text-decoration:none; padding:2px 4px 2px;}.dede_pages ul li.thisclass,.dede_pages ul li.thisclass a,.pagebox ul li.thisclass a:hover{ background-color:#F8F8F8; padding:2px 4px 2px; font-weight:bold;}.dede_pages .pageinfo{ line-height:21px; padding:12px 10px 12px 16px; color:#999;}.dede_pages .pageinfo strong{ color:#555; font-weight:normal;}
+</style>
+        <div class=dede_pages>
+          <ul>
+            {dede:pagelist listitem="index,end,pre,next,pageno"/}
+          </ul>
+        </div>
+      </div>
+      <!--放置页码列表--> 
+    </div>
+  </div>
+</div>
+<!--Footer-->
+<div class="allclear"></div>
+{dede:include filename="footer.htm"/} 
+<!--/Footer-->
+</body>
+</html>
